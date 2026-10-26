@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Личная библиотека</title>
+	<script type="module" src="main.js"></script>
+	<style>
+		body {
+			font-family: sans-serif;
+			max-width: 640px;
+			margin: 2rem auto;
+			padding: 0 1rem;
+		}
+
+		form,
+		.toolbar {
+			display: flex;
+			gap: .5rem;
+			margin-bottom: 1rem;
+			flex-wrap: wrap;
+		}
+
+		#search {
+			flex: 1;
+			padding: .4rem;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+
+		.book {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border: 1px solid #ccc;
+			border-radius: 6px;
+			padding: .5rem .75rem;
+			margin-bottom: .5rem;
+		}
+
+		.book.read .info strong {
+			text-decoration: line-through;
+			color: #777;
+		}
+
+		.actions {
+			display: flex;
+			gap: .4rem;
+		}
+
+		.empty {
+			color: #777;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Моя библиотека</h1>
+
+	<form id="book-form">
+		<input name="title" placeholder="Название" required>
+		<input name="author" placeholder="Автор" required>
+		<input name="year" type="number" placeholder="Год" min="0" max="2100" required>
+		<button type="submit">Добавить</button>
+	</form>
+
+	<div class="toolbar">
+		<input id="search" placeholder="Поиск по названию или автору">
+	</div>
+
+	<p id="stats"></p>
+	<ul id="book-list"></ul>
+
+
+</body>
+
+</html>
